@@ -30,8 +30,16 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# Environment variables (ALWAYS ignore main .env file with secrets)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Uncomment the line below if you have other environment files specific to your project,
+# but generally, it's safer to be explicit.
+# .env.*.local
 
 # vercel
 .vercel
