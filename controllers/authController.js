@@ -141,7 +141,8 @@ const forgotPassword = async (req, res) => {
             return res.status(500).json({ message: 'Failed to save token to database. Please try again.' });
         }
 
-        const resetUrl = `${req.protocol}://${req.get('host')}/api/auth/resetpassword/${resetToken}`;
+        const resetUrl = `${process.env.FRONTEND_URL}/resetpassword/${resetToken}`;
+
         const message = `You are receiving this email because you (or someone else) has requested the reset of a password. Please make a PUT request to:\n\n ${resetUrl}\n\nThis token is valid for 1 hour.`;
 
         try {
